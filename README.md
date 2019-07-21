@@ -2,6 +2,33 @@
 
 Display keyboard layout in sway
 
+This is a [py3status](https://py3status.readthedocs.io/en/latest/) module.
+
+* Copy the file `keyboard_layout_sway.py` to `~/.config/py3status/modules/`
+* Go to `~/.config/py3status/config` to configure it.
+```
+    general {
+        output_format = i3bar
+        interval = 5
+        colors = true
+    }
+
+    order += "keyboard_layout_sway"
+
+    keyboard_layout_sway {
+        # config goes here
+    }
+```
+* Finally run py3status
+```
+    # standalone
+    py3status -c ~/.config/py3status/config -i ~/.config/py3status/modules
+
+    # In swaybar, ~/.config/sway/config
+    bar {
+        status_command py3status -c ~/.config/py3status/config -i ~/.config/py3status/modules
+    }
+```
 
 ## Configuration parameters
 
